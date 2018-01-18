@@ -17,5 +17,14 @@ class Lists(unittest.TestCase):
         uut = cycle.build_list(data)
         self.assertFalse(cycle.cycle1(uut))
 
+    def test_has_cycle(self):
+        """ Both cycle detectors should return True. """
+        head = cycle.build_list([1, 2, 3, 4])
+        # loop 4 back to 2
+        temp = head.next.next.next
+        temp.next = head.next
+        self.assertTrue(cycle.cycle1(head))
+
+
 if __name__ == '__main__':
     unittest.main()

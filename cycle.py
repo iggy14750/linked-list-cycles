@@ -23,6 +23,12 @@ def travel(node):
 
 def cycle1(head):
     """ The first implementation of cycle detector, linear space. """
+    seen = set()
+    while head is not None:
+        if head in seen:
+            return True
+        seen.add(head)
+        head = head.next
     return False
 
 if __name__ == '__main__':
