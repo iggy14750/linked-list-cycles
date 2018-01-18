@@ -21,5 +21,9 @@ def travel(node):
         node = node.next
         yield data
 
+def cycle1(head):
+    """ The first implementation of cycle detector, linear space. """
+    return False
+
 if __name__ == '__main__':
     pass
