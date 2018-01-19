@@ -36,7 +36,7 @@ def cycle2(head):
     fast = head.next
     slow = head
     while fast and fast.next:
-        if fast == slow or fast.next == slow:
+        if slow in (fast, fast.next):
             return True
         slow = slow.next
         fast = fast.next.next
