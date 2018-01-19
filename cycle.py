@@ -31,5 +31,16 @@ def cycle1(head):
         head = head.next
     return False
 
+def cycle2(head):
+    """ The second implementation, with constant space. """
+    fast = head.next
+    slow = head
+    while fast and fast.next:
+        if fast == slow or fast.next == slow:
+            return True
+        slow = slow.next
+        fast = fast.next.next
+    return False
+
 if __name__ == '__main__':
     pass
