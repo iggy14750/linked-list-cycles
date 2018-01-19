@@ -27,6 +27,19 @@ class Lists(unittest.TestCase):
         self.assertTrue(cycle.cycle1(head))
         self.assertTrue(cycle.cycle2(head))
 
+    def test_singleton(self):
+        """ Does not contain a cycle, only one element. """
+        head = cycle.build_list(['single'])
+        self.assertFalse(cycle.cycle1(head))
+        self.assertFalse(cycle.cycle2(head))
+
+    def test_singleton_cyclic(self):
+        """ A singleton cycle, should return True. """
+        head = cycle.build_list(['cyclic'])
+        head.next = head
+        self.assertTrue(cycle.cycle1(head))
+        self.assertTrue(cycle.cycle2(head))
+
 
 if __name__ == '__main__':
     unittest.main()
